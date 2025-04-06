@@ -5,12 +5,12 @@ public class LocalSceneManager : MonoBehaviour
 {
     public string sceneName;
     
-    public void OnClickStart()
+    public void OnClickStart() 
     {
         SceneManager.LoadScene(sceneName);
     }
 
-    public void OnClickQuit()
+    public void OnClickQuit() 
     {
         Application.Quit(); 
     }
