@@ -8,8 +8,5 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(data.itemName);
-        Debug.Log(data.itemCode);
-        Debug.Log(data.itemDescription);
     }
 }
