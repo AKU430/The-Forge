@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4169de070bd76dd40aac5e952a6b9ba1, type: 3}
   m_Name: iron
   m_EditorClassIdentifier: 
-  itemCode: 
+  itemCode: Iron
   itemSprite: {fileID: 0}
-  itemName: 
-  itemDescription: 
+  itemName: "\uCCA0"
+  itemDescription: "\uBCF4\uD3B8\uC801\uC778 \uB2E8\uC870 \uC7AC\uB8CC\uB2E4."

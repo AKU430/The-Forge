@@ -19,11 +19,11 @@ public class LodeMining : MonoBehaviour
             Debug.Log("아연 얻었음 ㅇㅇ");
         else if (oreProbability < 80)
             Debug.Log("니켈 얻었음 ㅇㅇ");
-        else if (oreProbability >= 90)
+        else if (oreProbability < 90)
             Debug.Log("주석 얻었음 ㅇㅇ");
-        else if (oreProbability >= 95)
+        else if (oreProbability < 95)
             Debug.Log("금 얻었음 ㅇㅇ");
-        else
+        else if (oreProbability < 100)
             Debug.Log("은 얻었음 ㅇㅇ");
     }
 }

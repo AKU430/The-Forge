@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4169de070bd76dd40aac5e952a6b9ba1, type: 3}
   m_Name: nickel
   m_EditorClassIdentifier: 
-  itemCode: 
+  itemCode: Nickel
   itemSprite: {fileID: 0}
-  itemName: 
-  itemDescription: 
+  itemName: "\uB2C8\uCF08"
+  itemDescription: "\uD569\uAE08\uC5D0 \uC8FC\uB85C \uC0AC\uC6A9\uB418\uB294 \uAD11\uBB3C\uC774\uB2E4."
