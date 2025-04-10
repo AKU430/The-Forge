@@ -2,19 +2,17 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
 
 public class Forging : MonoBehaviour
 {
     [Header("파티클 및 오디오 설정")]
     [Tooltip("단조 효과로 사용할 파티클")]
     public ParticleSystem forgingParticles;
-
     [Tooltip("UI 전환 애니메이터")]
     public Animator menuController;
-
     [Tooltip("단조 효과음을 재생할 Audio Source")]
     public AudioSource forgingAudioSource;
-
     [Tooltip("단조 효과음 클립")]
     public AudioClip forgingSound;
     
@@ -22,7 +20,6 @@ public class Forging : MonoBehaviour
     [Header("무기 정보 UI")]
     [Tooltip("무기 이름을 표시하는 텍스트")]
     public TextMeshProUGUI weaponName;
-
     [Tooltip("무기 가치를 표시하는 텍스트")]
     public TextMeshProUGUI weaponValue;
 
@@ -30,7 +27,6 @@ public class Forging : MonoBehaviour
     [Header("UI 버튼")]
     [Tooltip("메뉴 열기 버튼")]
     public GameObject openButton;
-
     [Tooltip("메뉴 닫기 버튼")]
     public GameObject closeButton;
 
@@ -57,9 +53,7 @@ public class Forging : MonoBehaviour
         {
             
         }
-        
     }
-
     
     public void OnclickInventoryOpen()
     {
