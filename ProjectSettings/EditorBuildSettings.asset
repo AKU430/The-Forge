@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/scenes/Main.unity
     guid: 2b076e6921b4f0b4394d412e124e52f8
+  - enabled: 1
+    path: Assets/scenes/Mining.unity
+    guid: 69676858e39f510469f1e0f9e0eddb87
+  - enabled: 1
+    path: Assets/scenes/Inventory.unity
+    guid: a5298fcc41bf5294ea7c8acefbce5e96
   m_configObjects: {}

@@ -5,7 +5,7 @@ public class LocalSceneManager : MonoBehaviour
 {
     public string sceneName;
     
-    public void OnClickStart() 
+    public void OnClickSceneLoad() 
     {
         SceneManager.LoadScene(sceneName);
     }

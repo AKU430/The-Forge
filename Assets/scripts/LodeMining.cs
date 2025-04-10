@@ -15,10 +15,8 @@ public class LodeMining : MonoBehaviour
             Debug.Log("구리 얻었음 ㅇㅇ");
         else if (oreProbability < 60)
             Debug.Log("철 얻었음 ㅇㅇ");
-        else if (oreProbability < 70)
+        else if (oreProbability < 75)
             Debug.Log("아연 얻었음 ㅇㅇ");
-        else if (oreProbability < 80)
-            Debug.Log("니켈 얻었음 ㅇㅇ");
         else if (oreProbability < 90)
             Debug.Log("주석 얻었음 ㅇㅇ");
         else if (oreProbability < 95)
