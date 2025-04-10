@@ -44,36 +44,41 @@ public class Forging : MonoBehaviour
         
     }
 
-    private void WeaponInfo(string name,int value)
-    {
-        weaponName.text = $"{name}";
-        weaponValue.text = $"{value}";
-    }
-
     public void OnclickForging(int mode)
     {
+        //단조
         if (mode == 0)
         {
-            
+            forgingAudioSource.PlayOneShot(forgingSound);
+            forgingParticles.Play();
         }
+        //제련
         else
         {
             
         }
-        /*forgingAudioSource.PlayOneShot(forgingSound);
-        forgingParticles.Play();*/
+        
     }
 
+    
+    public void OnclickInventoryOpen()
+    {
+        inventory.SetActive(true);
+        Debug.Log("인벤토리 오픈");
+    }
+    
+    public void OnclickInventoryClose()
+    {
+        inventory.SetActive(false);
+        Debug.Log("인벤토리 닫음");
+    }
+    
     public void OnclickMenuOpen()
     {
         openButton.SetActive(false);
         menuController.SetTrigger("Open");
         closeButton.SetActive(true);
-    }
-
-    public void OnclickInventoryOpen()
-    {
-        inventory.SetActive(true);
+        Debug.Log("메뉴 오픈");
     }
     
     public void OnclickMenuClose()
@@ -82,5 +87,6 @@ public class Forging : MonoBehaviour
         menuController.SetTrigger("Close");
         menuController.SetTrigger("Return");
         openButton.SetActive(true);
+        Debug.Log("메뉴 닫음");
     }
 }

@@ -5,7 +5,8 @@ public class WeaponData : ScriptableObject
 {
     public string weaponCode;
     public Sprite weaponIcon;
-    public string weaponName;
     public string weaponType;
+    public string weaponName;
+    public string weaponValue;
     public string weaponIngredient;
 }
