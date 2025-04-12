@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31e30205d8b61c047bfacb2dc2b17220, type: 3}
-  m_Name: New Weapon Data
+  m_Script: {fileID: 11500000, guid: 8f68d75f2ee92d7449d30c2ab4e0f090, type: 3}
+  m_Name: silver ore
   m_EditorClassIdentifier: 
-  weaponCode: 
-  weaponIcon: {fileID: 0}
-  weaponName: 
-  weaponIngredient: 
+  itemCode: SilverOre
+  itemIcon: {fileID: 21300000, guid: fe0b07b6b7fcf4c4ca0e89e0db5eebb1, type: 3}
+  itemName: "\uC740 \uAD11\uC11D"
+  itemType: Raw Ore

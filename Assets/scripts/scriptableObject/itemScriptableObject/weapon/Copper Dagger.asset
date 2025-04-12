@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Copper Dagger
   m_EditorClassIdentifier: 
   weaponCode: Copper Dagger
-  weaponIcon: {fileID: 503644337, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+  weaponIcon: {fileID: 21300000, guid: c3a60b1a8c175564180fb206ab79d46b, type: 3}
+  weaponType: Dagger
   weaponName: "\uAD6C\uB9AC\uC81C \uB2E8\uAC80"
-  weaponIngredient: Copper
+  weaponValue: 100
+  weaponIngredient: Refined Copper
