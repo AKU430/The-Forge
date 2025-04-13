@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -21,52 +22,64 @@ public class Forging : MonoBehaviour
 
     [Space(10)]
     [Header("창")]
+    [SerializeField][Tooltip("전체 창")] private List<GameObject> allWindows = new List<GameObject>();
     [Tooltip("인벤토리 오브젝트")] public GameObject inventory;
     [Tooltip("세이브 오브젝트")] public GameObject dataSave;
+    
+    [Space(height:10)]
+    [Header("메인버튼 관련 인스펙터")]
     [Tooltip("제련, 단조 작업 선택 오브젝트")] public GameObject workChoose;
     [Tooltip("제련 작업 오브잭트")] public GameObject smelter;
     [Tooltip("단조 작업 오브잭트")] public GameObject anvil;
 
-    public void WorkManager(string mode)
+    public enum WorkMode
     {
-        //작업 선택
-        if (mode == "작업 선택")
+        WorkChoose, 
+        Forging, 
+        Smelting
+    }
+
+    //메인 버튼 작업 관리자
+    public void WorkManager(WorkMode mode)
+    {
+        switch (mode)
         {
-            Debug.Log("작업 선택 창 오픈");
-            workChoose.SetActive(true);
-        }
-        //단조
-        else if (mode == "단조 선택 됨")
-        {
-            forgingAudioSource.PlayOneShot(forgingSound);
-            forgingParticles.Play();
-        }
-        //제련
-        else if (mode == "제련 선택 됨")
-        {
+            case WorkMode.WorkChoose:
+                Debug.Log("작업 선택 창 오픈");
+                workChoose.SetActive(true);
+                break;
             
+            case WorkMode.Forging:
+                /*forgingAudioSource.PlayOneShot(forgingSound);
+                forgingParticles.Play();*/
+                break;
+            
+            case WorkMode.Smelting:
+                break;
         }
     }
 
+    //제련 오픈
     public void OnclickSmelting()
     {
         OnclickWindowClose();
         Debug.Log("제련 창 오픈");
-        WorkManager("제련 선택됨");
+        WorkManager(WorkMode.Smelting);
         smelter.SetActive(true);
         workChoose.SetActive(false);
     }
 
+    //단조 오픈
     public void OnclickForging()
     {
         OnclickWindowClose();
         Debug.Log("단조 창 오픈");
-        WorkManager("단조 선택됨");
+        WorkManager(WorkMode.Forging);
         anvil.SetActive(true);
         workChoose.SetActive(false);
     }
     
-    //창 열고 닫음
+    //인벤토리 오픈
     public void OnclickInventoryOpen()
     {
         OnclickWindowClose();
@@ -74,6 +87,7 @@ public class Forging : MonoBehaviour
         Debug.Log("인벤토리 오픈");
     }
     
+    //세이브 오픈
     public void OnclickSaveWindowOpen()
     {
         OnclickWindowClose();
@@ -81,16 +95,15 @@ public class Forging : MonoBehaviour
         Debug.Log("세이브 로드 오픈");
     }
     
+    //전체 창 닫기
     public void OnclickWindowClose()
     {
-        anvil.SetActive(false);
-        smelter.SetActive(false);
-        workChoose.SetActive(false);
-        inventory.SetActive(false);
-        dataSave.SetActive(false);
-            Debug.Log("창 닫음");
+        foreach (var window in allWindows)
+            window.SetActive(false);
+        Debug.Log("창 닫음");
     }
     
+    //메뉴 오픈
     public void OnclickMenuOpen()
     {
         openButton.SetActive(false);
@@ -99,6 +112,7 @@ public class Forging : MonoBehaviour
         Debug.Log("메뉴 오픈");
     }
     
+    //메뉴 닫기
     public void OnclickMenuClose()
     {
         closeButton.SetActive(false);

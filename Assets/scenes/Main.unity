@@ -156,7 +156,7 @@ RectTransform:
   - {fileID: 666087571}
   - {fileID: 2026698964}
   - {fileID: 1416726794}
-  m_Father: {fileID: 839800855}
+  m_Father: {fileID: 1341027391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4008,6 +4008,11 @@ MonoBehaviour:
   weaponValue: {fileID: 364578952}
   openButton: {fileID: 1475910001}
   closeButton: {fileID: 1197834338}
+  allWindows:
+  - {fileID: 1603583979}
+  - {fileID: 839800854}
+  - {fileID: 1848363611}
+  - {fileID: 21041912}
   inventory: {fileID: 21041912}
   dataSave: {fileID: 1848363611}
   workChoose: {fileID: 1811190675}
@@ -4214,7 +4219,6 @@ RectTransform:
   m_Children:
   - {fileID: 1314129211}
   - {fileID: 1859400326}
-  - {fileID: 21041913}
   m_Father: {fileID: 1341027391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6183,6 +6187,7 @@ RectTransform:
   - {fileID: 1603583980}
   - {fileID: 839800855}
   - {fileID: 1848363612}
+  - {fileID: 21041913}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

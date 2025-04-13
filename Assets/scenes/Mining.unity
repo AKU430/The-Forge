@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 547499427}
   - component: {fileID: 547499423}
   - component: {fileID: 547499426}
-  - component: {fileID: 547499428}
   m_Layer: 0
   m_Name: OreLode
   m_TagString: Untagged
@@ -255,19 +254,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &547499428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547499422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f5571d9a7d87874dba79bad4f601ab3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 542e505126dc8444db6edae7e6fe5b10, type: 2}
 --- !u!1 &1104979532
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +373,11 @@ MonoBehaviour:
   oreQuantity: 0
   miningAmount: 0
   oreProbability: 0
+  ores:
+  - {fileID: 11400000, guid: d278698dcb5525d4bac0b96c23296acb, type: 2}
+  - {fileID: 11400000, guid: 15dc15509a5d4e14db1d98eb51f5a8d2, type: 2}
+  - {fileID: 11400000, guid: 0f4cc5bbef1eedf4abded3d68e4029ed, type: 2}
+  - {fileID: 11400000, guid: 0f773dd130a9d73409e8f4112064970e, type: 2}
 --- !u!1 &1582665306
 GameObject:
   m_ObjectHideFlags: 0
