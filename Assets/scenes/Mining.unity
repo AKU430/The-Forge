@@ -122,6 +122,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &305858885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 305858887}
+  - component: {fileID: 305858886}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &305858886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305858885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803848575dadeb146933f8ca1ee5f3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oreProbability: 0
+  miningTicket: 0
+  inventoryManager: {fileID: 0}
+  ticketAmount: {fileID: 1973545818}
+  ores:
+  - {fileID: 11400000, guid: d278698dcb5525d4bac0b96c23296acb, type: 2}
+  - {fileID: 11400000, guid: 0f4cc5bbef1eedf4abded3d68e4029ed, type: 2}
+  - {fileID: 11400000, guid: 0f773dd130a9d73409e8f4112064970e, type: 2}
+  - {fileID: 11400000, guid: 15dc15509a5d4e14db1d98eb51f5a8d2, type: 2}
+--- !u!4 &305858887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305858885}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &547499422
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +238,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1104979537}
+      - m_Target: {fileID: 305858886}
         m_TargetAssemblyTypeName: LodeMining, Assembly-CSharp
         m_MethodName: OnclickMining
         m_Mode: 1
@@ -263,7 +316,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1104979536}
-  - component: {fileID: 1104979537}
   - component: {fileID: 1104979535}
   - component: {fileID: 1104979534}
   - component: {fileID: 1104979533}
@@ -358,26 +410,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1104979537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104979532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 803848575dadeb146933f8ca1ee5f3f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  oreQuantity: 0
-  miningAmount: 0
-  oreProbability: 0
-  ores:
-  - {fileID: 11400000, guid: d278698dcb5525d4bac0b96c23296acb, type: 2}
-  - {fileID: 11400000, guid: 15dc15509a5d4e14db1d98eb51f5a8d2, type: 2}
-  - {fileID: 11400000, guid: 0f4cc5bbef1eedf4abded3d68e4029ed, type: 2}
-  - {fileID: 11400000, guid: 0f773dd130a9d73409e8f4112064970e, type: 2}
 --- !u!1 &1582665306
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,3 +711,4 @@ SceneRoots:
   - {fileID: 2038033806}
   - {fileID: 1104979536}
   - {fileID: 1582665309}
+  - {fileID: 305858887}

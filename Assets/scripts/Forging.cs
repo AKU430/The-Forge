@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class Forging : MonoBehaviour
+public class Forging : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("파티클 및 오디오 설정")]
     [Tooltip("단조 효과로 사용할 파티클")] public ParticleSystem forgingParticles;
@@ -22,24 +24,31 @@ public class Forging : MonoBehaviour
 
     [Space(10)]
     [Header("창")]
-    [SerializeField][Tooltip("전체 창")] private List<GameObject> allWindows = new List<GameObject>();
     [Tooltip("인벤토리 오브젝트")] public GameObject inventory;
     [Tooltip("세이브 오브젝트")] public GameObject dataSave;
-    
-    [Space(height:10)]
-    [Header("메인버튼 관련 인스펙터")]
+    [SerializeField][Tooltip("전체 창")] private List<GameObject> allWindows = new List<GameObject>();
+
+    [Space(height: 10)] 
+    [Header("메인버튼 관련 인스펙터")] 
+    [Tooltip("작업 총괄하는 버튼")] public GameObject mainButton;
     [Tooltip("제련, 단조 작업 선택 오브젝트")] public GameObject workChoose;
     [Tooltip("제련 작업 오브잭트")] public GameObject smelter;
     [Tooltip("단조 작업 오브잭트")] public GameObject anvil;
+    [Tooltip("제련 작업 슬롯 리스트")] public List<ItemData> allItems = new List<ItemData>();
 
+    
+    
+    //메인 버튼 작업 관리자
+    
     public enum WorkMode
     {
         WorkChoose, 
         Forging, 
         Smelting
     }
-
-    //메인 버튼 작업 관리자
+    
+    public void OnClickWorkChoose() => WorkManager(WorkMode.WorkChoose);
+    
     public void WorkManager(WorkMode mode)
     {
         switch (mode)
@@ -55,10 +64,11 @@ public class Forging : MonoBehaviour
                 break;
             
             case WorkMode.Smelting:
+                
                 break;
         }
     }
-
+    
     //제련 오픈
     public void OnclickSmelting()
     {
@@ -120,5 +130,20 @@ public class Forging : MonoBehaviour
         menuController.SetTrigger("Return");
         openButton.SetActive(true);
         Debug.Log("메뉴 닫음");
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        throw new NotImplementedException();
     }
 }
