@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
 
-public class Forging : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Forging : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("파티클 및 오디오 설정")]
     [Tooltip("단조 효과로 사용할 파티클")] public ParticleSystem forgingParticles;
@@ -30,6 +30,7 @@ public class Forging : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     [Space(height: 10)] 
     [Header("메인버튼 관련 인스펙터")] 
+    [Tooltip("제련, 단조 창이 열림 감지 변수")] public bool isOtherWindow = false;
     [Tooltip("작업 총괄하는 버튼")] public GameObject mainButton;
     [Tooltip("제련, 단조 작업 선택 오브젝트")] public GameObject workChoose;
     [Tooltip("제련 작업 오브잭트")] public GameObject smelter;
@@ -39,7 +40,6 @@ public class Forging : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     
     
     //메인 버튼 작업 관리자
-    
     public enum WorkMode
     {
         WorkChoose, 
@@ -54,8 +54,11 @@ public class Forging : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         switch (mode)
         {
             case WorkMode.WorkChoose:
-                Debug.Log("작업 선택 창 오픈");
-                workChoose.SetActive(true);
+                if (isOtherWindow == false)
+                {
+                    Debug.Log("작업 선택 창 오픈");
+                    workChoose.SetActive(true);
+                }
                 break;
             
             case WorkMode.Forging:
@@ -75,6 +78,7 @@ public class Forging : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         OnclickWindowClose();
         Debug.Log("제련 창 오픈");
         WorkManager(WorkMode.Smelting);
+        isOtherWindow = true;
         smelter.SetActive(true);
         workChoose.SetActive(false);
     }
@@ -85,6 +89,7 @@ public class Forging : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         OnclickWindowClose();
         Debug.Log("단조 창 오픈");
         WorkManager(WorkMode.Forging);
+        isOtherWindow = true;
         anvil.SetActive(true);
         workChoose.SetActive(false);
     }
@@ -110,6 +115,7 @@ public class Forging : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     {
         foreach (var window in allWindows)
             window.SetActive(false);
+        isOtherWindow = false;
         Debug.Log("창 닫음");
     }
     
@@ -131,19 +137,5 @@ public class Forging : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         openButton.SetActive(true);
         Debug.Log("메뉴 닫음");
     }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

@@ -1,31 +1,34 @@
-using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class LodeMining : MonoBehaviour
 {
     public int oreProbability;
-    public int miningTicket;
-    public PlayerData inventoryManager;
-    public TMPro.TextMeshProUGUI ticketAmount;
+    public TextMeshProUGUI ticketAmount;
     public List<ItemData> ores = new List<ItemData>();
-    
+
+    private void Update()
+    {
+        ticketAmount.text = $"소지 채굴권 수 : {PlayerData.instance.miningTicket}";
+    }
     
     public void OnclickMining()
     {
-        
-        if (miningTicket >= 1)
+
+        if (PlayerData.instance.miningTicket >= 1)
         {
             oreProbability = Random.Range(0, 100);
             if (oreProbability < 30)
             {
-                inventoryManager.inventory.Add(ores[0]);
+                CheckSlots(ores[0]);
                 Debug.Log("구리 얻었음 ㅇㅇ");
             }
 
             else if (oreProbability < 60)
             {
-                inventoryManager.inventory.Add(ores[1]);
+                CheckSlots(ores[1]);
                 Debug.Log("철 얻었음 ㅇㅇ");
             }
 
@@ -37,16 +40,37 @@ public class LodeMining : MonoBehaviour
 
             else if (oreProbability < 95)
             {
-                inventoryManager.inventory.Add(ores[2]);
+                CheckSlots(ores[2]);
                 Debug.Log("은 얻었음 ㅇㅇ");
             }
 
             else if (oreProbability < 100)
             {
-                inventoryManager.inventory.Add(ores[3]);
+                CheckSlots(ores[3]);
                 Debug.Log("금 얻었음 ㅇㅇ");
             }
         }
-        
+    }
+
+    public void CheckSlots(ItemData item)
+    {
+        var found = false;
+        var playerData = PlayerData.instance.itemSlots;
+        for (var i = 0; i < playerData.Count; i++)
+        {
+            if (playerData[i].item == item)
+            {
+                playerData[i].itemQuantity++;
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            ItemSlot slot = new ItemSlot();
+            slot.item = item;
+            slot.itemQuantity = 1;
+            playerData.Add(slot);
+        }
     }
 }
