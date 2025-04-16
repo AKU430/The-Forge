@@ -11,7 +11,7 @@ public class LodeMining : MonoBehaviour
 
     private void Update()
     {
-        ticketAmount.text = $"소지 채굴권 수 : {PlayerData.instance.miningTicket}";
+        ticketAmount.text = $"채굴권 : {PlayerData.instance.miningTicket}";
     }
     
     public void OnclickMining()
@@ -23,30 +23,34 @@ public class LodeMining : MonoBehaviour
             if (oreProbability < 30)
             {
                 CheckSlots(ores[0]);
+                PlayerData.instance.miningTicket--;
                 Debug.Log("구리 얻었음 ㅇㅇ");
             }
 
             else if (oreProbability < 60)
             {
                 CheckSlots(ores[1]);
+                PlayerData.instance.miningTicket--;
                 Debug.Log("철 얻었음 ㅇㅇ");
             }
 
             else if (oreProbability < 75)
                 Debug.Log("아연 얻었음 ㅇㅇ");
-
+    
             else if (oreProbability < 90)
                 Debug.Log("주석 얻었음 ㅇㅇ");
 
             else if (oreProbability < 95)
             {
                 CheckSlots(ores[2]);
+                PlayerData.instance.miningTicket--;
                 Debug.Log("은 얻었음 ㅇㅇ");
             }
 
             else if (oreProbability < 100)
             {
                 CheckSlots(ores[3]);
+                PlayerData.instance.miningTicket--;
                 Debug.Log("금 얻었음 ㅇㅇ");
             }
         }

@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f68d75f2ee92d7449d30c2ab4e0f090, type: 3}
+  m_Script: {fileID: 11500000, guid: 110d079fba64e1c43814d0e553d848b0, type: 3}
   m_Name: refined iron
   m_EditorClassIdentifier: 
   itemCode: RefinedIron
-  itemIcon: {fileID: 0}
-  itemName: "\uC81C\uB828\uB41C \uCCA0"
-  itemType: Refined Ore
+  itemIcon: {fileID: 21300016, guid: 03dd1ef6fb163214c9e1ac0242dab3ba, type: 3}
+  itemName: 
+  itemType: 
+  itemIngredient: 
