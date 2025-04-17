@@ -26,6 +26,7 @@ public class Forging : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDra
     [Header("창")]
     [Tooltip("인벤토리 오브젝트")] public GameObject inventory;
     [Tooltip("세이브 오브젝트")] public GameObject dataSave;
+    [Tooltip("상점 오브젝트")] public GameObject shop;
     [SerializeField][Tooltip("전체 창")] private List<GameObject> allWindows = new List<GameObject>();
 
     [Space(height: 10)] 
@@ -36,9 +37,14 @@ public class Forging : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDra
     [Tooltip("제련 작업 오브잭트")] public GameObject smelter;
     [Tooltip("단조 작업 오브잭트")] public GameObject anvil;
     [Tooltip("제련 작업 슬롯 리스트")] public List<ItemData> allItems = new List<ItemData>();
+        
+    [Space(10)]
+    [Header("데이터 뭉탱이")]
+    [Tooltip("구매가능 아이템 데이터")] public ShopItem shopItem;
+    [Tooltip("무기 데이터")] public WeaponData weaponData;
+    [Tooltip("광석 등 데이터")] public ItemData itemData;
+    [Tooltip("제련 광석 데이터")] public RefinedOreData refinedOreData;
 
-    
-    
     //메인 버튼 작업 관리자
     public enum WorkMode
     {
@@ -108,6 +114,24 @@ public class Forging : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDra
         OnclickWindowClose();
         dataSave.SetActive(true);
         Debug.Log("세이브 로드 오픈");
+    }
+    
+    //상점 오픈
+    public void OnclickShopWindowOpen()
+    {
+        OnclickWindowClose();
+        shop.SetActive(true);
+        Debug.Log("상점 오픈");
+    }
+
+    //광맥 채굴티켓 구매
+    public void OnclickPurchase()
+    {
+        if (shopItem.itemValue <= PlayerData.instance.gold)
+        {
+            PlayerData.instance.miningTicket++;
+            PlayerData.instance.gold = PlayerData.instance.gold - shopItem.itemValue;
+        }
     }
     
     //전체 창 닫기

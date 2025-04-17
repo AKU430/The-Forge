@@ -9,7 +9,7 @@ public class LodeMining : MonoBehaviour
     public TextMeshProUGUI ticketAmount;
     public List<ItemData> ores = new List<ItemData>();
 
-    private void Update()
+    private void Start()
     {
         ticketAmount.text = $"채굴권 : {PlayerData.instance.miningTicket}";
     }
@@ -64,6 +64,7 @@ public class LodeMining : MonoBehaviour
         {
             if (playerData[i].item == item)
             {
+                ticketAmount.text = $"채굴권 : {PlayerData.instance.miningTicket}";
                 playerData[i].itemQuantity++;
                 found = true;
                 break;
@@ -71,6 +72,7 @@ public class LodeMining : MonoBehaviour
         }
         if (!found)
         {
+            ticketAmount.text = $"채굴권 : {PlayerData.instance.miningTicket}";
             ItemSlot slot = new ItemSlot();
             slot.item = item;
             slot.itemQuantity = 1;
