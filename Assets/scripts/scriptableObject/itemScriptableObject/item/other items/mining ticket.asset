@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0a99b85a73e014fba6fba64202b3c2, type: 3}
   m_Name: mining ticket
   m_EditorClassIdentifier: 
-  itemCode: 
-  itemIcon: {fileID: 0}
-  itemName: 
-  itemType: 
-  itemValue: 
+  itemCode: MiningTicket
+  itemIcon: {fileID: 21300000, guid: 4e1d6b05d39737043b18ff17552a358a, type: 3}
+  itemName: "\uAD11\uB9E5 \uCC44\uAD74\uD2F0\uCF13"
+  itemType: Expandables
+  itemValue: 2500

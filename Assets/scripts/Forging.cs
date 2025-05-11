@@ -8,7 +8,8 @@ public class Forging : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDra
 {
     [Header("파티클 및 오디오 설정")]
     [Tooltip("단조 효과로 사용할 파티클")] public ParticleSystem forgingParticles;
-    [Tooltip("UI 전환 애니메이터")] public Animator menuController;
+    [Tooltip("메뉴 애니메이터")] public Animator menuController;
+    [Tooltip("상점 애니메이터")] public Animator shopController;
     [Tooltip("단조 효과음을 재생할 Audio Source")] public AudioSource forgingAudioSource;
     [Tooltip("단조 효과음 클립")] public AudioClip forgingSound;
     
@@ -26,7 +27,6 @@ public class Forging : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDra
     [Header("창")]
     [Tooltip("인벤토리 오브젝트")] public GameObject inventory;
     [Tooltip("세이브 오브젝트")] public GameObject dataSave;
-    [Tooltip("상점 오브젝트")] public GameObject shop;
     [SerializeField][Tooltip("전체 창")] private List<GameObject> allWindows = new List<GameObject>();
 
     [Space(height: 10)] 
@@ -117,11 +117,18 @@ public class Forging : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDra
     }
     
     //상점 오픈
-    public void OnclickShopWindowOpen()
+    public void OnclickShopOpen()
     {
-        OnclickWindowClose();
-        shop.SetActive(true);
+        shopController.SetTrigger("Open");
         Debug.Log("상점 오픈");
+    }
+    
+    //상점 닫기
+    public void OnclickShopClose()
+    {
+        shopController.SetTrigger("Close");
+        shopController.SetTrigger("Return");
+        Debug.Log("상점 닫음");
     }
 
     //광맥 채굴티켓 구매

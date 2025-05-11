@@ -9,7 +9,7 @@ public class LodeMining : MonoBehaviour
     public TextMeshProUGUI ticketAmount;
     public List<ItemData> ores = new List<ItemData>();
 
-    private void Start()
+    private void Update()
     {
         ticketAmount.text = $"채굴권 : {PlayerData.instance.miningTicket}";
     }
